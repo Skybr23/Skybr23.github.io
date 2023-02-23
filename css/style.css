@@ -13,6 +13,7 @@ body {
 }
 
 .avatar {
+    margin-top: 20px;
     width: 120px;
     border-radius: 120px;
     border: 3px rgb(255, 255, 255);
@@ -36,7 +37,7 @@ h2 {
     margin-top: 20px;
 }
 
-.morre {
+.gif {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -55,6 +56,7 @@ h2 {
 
 .social img {
     width: 33px;
+    border-radius: 5px;
 }
 
 .links-list {
