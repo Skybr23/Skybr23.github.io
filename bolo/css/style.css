@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+.avatar {
+    margin-top: 20px;
+    width: 120px;
+    border-radius: 120px;
+    border: 5px rgb(0, 0, 0);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+.profile {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gif {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 30px;
+}
+
+.social img {
+    width: 33px;
+    border-radius: 5px;
+}
+
+.links-list {
+    list-style: none;
+}
+
+.links-list li {
+    margin: 10px 20px;
+}
+
+.links-list li a {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.158);
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.342);
+    font-weight: bold;
+}
+
+.links-list li a span {
+    font-size: 17px;
+    color: rgb(54, 54, 54);
+    display: block;
+    margin-top: 10px;
+}
