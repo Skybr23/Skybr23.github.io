@@ -3,21 +3,21 @@ var position
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     btn.addEventListener("touchstart", function() {
-        position ? (position = 0) : (position = 15000);
+        position ? (position = 0) : (position = 150);
         btn.style.transform = `translate(${position}px,0px)`;
-        btn.style.transition = "all 0.1s ease";
+        btn.style.transition = "all 0.4s ease";
       });
       
       btn.addEventListener("touchend", function() {
-        position ? (position = 0) : (position = 15000);
+        position ? (position = 0) : (position = 150);
         btn.style.transform = `translate(${position}px,0px)`;
-        btn.style.transition = "all 0.1s ease";
+        btn.style.transition = "all 0.4s ease";
       });
   } else {
     btn.addEventListener("mouseover", function() {
-        position ? (position = 0) : (position = 15000);
+        position ? (position = 0) : (position = 150);
         btn.style.transform = `translate(${position}px,0px)`;
-        btn.style.transition = "all 0.1s ease";
+        btn.style.transition = "all 0.4s ease";
         });
   }
 
