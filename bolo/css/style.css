@@ -10,17 +10,17 @@ html, body {
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: rgb(0, 0, 0);
+    color: rgb(8, 206, 196);
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.473);
 }
 
 .avatar {
     margin-top: 20px;
     width: 120px;
     border-radius: 120px;
-    border: 5px rgb(0, 0, 0);
-    box-shadow: 0 0 20px rgb(0, 0, 0);
+    border: 5px rgb(0, 238, 255);
+    box-shadow: 0 0 20px rgb(8, 206, 196);
 }
 
 h1 {
@@ -33,6 +33,7 @@ h1 {
 
 h2 {
     font-size: 17px;
+    margin-bottom: 30px;
 }
 
 .profile {
@@ -72,18 +73,22 @@ h2 {
 
 .links-list li a {
     display: block;
-    background-color: rgba(255, 255, 255, 0.158);
+    background-color: rgba(255, 255, 255, 0.342);
     padding: 15px 20px;
     border-radius: 10px;
     text-decoration: none;
-    color:rgb(0, 0, 0);
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.342);
+    color: rgb(8, 206, 196);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.589);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.301);
     font-weight: bold;
 }
 
 .links-list li a span {
-    font-size: 17px;
-    color: rgb(54, 54, 54);
+    font-size: 20px;
+    color: rgb(8, 206, 196);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.589);
     display: block;
-    margin-top: 10px;
+    margin-top: 0;
 }
