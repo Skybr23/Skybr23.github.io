@@ -10,15 +10,15 @@ html, body {
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: rgb(255, 255, 255);
+    color: rgba(206, 206, 206, 0.712);
 }
 
 .fade-in {
     margin-top: 20px;
     width: 120px;
     border-radius: 120px;
-    border: 5px rgb(255, 255, 255);
-    box-shadow: 0 0 20px rgb(255, 255, 255);
+    border: 5px rgba(255, 255, 255, 0.705);
+    box-shadow: 0 0 20px rgba(206, 206, 206, 0.712);
 }
 
 h1 {
@@ -39,6 +39,7 @@ h2 {
 }
 
 .gif {
+    background-image: url(../img/blackhole.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -74,14 +75,14 @@ h2 {
     padding: 15px 20px;
     border-radius: 10px;
     text-decoration: none;
-    color:rgb(255, 255, 255);
+    color:rgba(0, 0, 0, 0.699);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.342);
     font-weight: bold;
 }
 
 .links-list li a span {
     font-size: 17px;
-    color: rgb(54, 54, 54);
+    color: rgba(0, 0, 0, 0.699);
     display: block;
     margin-top: 10px;
 }
