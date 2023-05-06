@@ -13,7 +13,7 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.avatar {
+.fade-in {
     margin-top: 20px;
     width: 120px;
     border-radius: 120px;
@@ -84,4 +84,18 @@ h2 {
     color: rgb(54, 54, 54);
     display: block;
     margin-top: 10px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
