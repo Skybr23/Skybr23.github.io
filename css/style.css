@@ -10,7 +10,7 @@ html, body {
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: rgba(224, 224, 224, 0.712);
+    color: rgba(255, 255, 255, 0.705);
 }
 
 .borda {
@@ -19,8 +19,8 @@ body {
     border-radius: 120px;
     border: 5px rgba(136, 136, 136, 0.705);
     box-shadow: 0 0 20px rgba(206, 206, 206, 0.712);
-    border: 2px solid rgb(36, 36, 36);
-    animation: animacao3 5s infinite, animacao1 2s ease-in-out forwards;
+    border: 2px solid rgb(255, 255, 255);
+    animation: animacao2 1s infinite, animacao1 2s ease-in-out forwards;
  }
 
 h1 {
@@ -29,11 +29,11 @@ h1 {
     font-size: 24px;
     margin-bottom: 10px;
     margin-top: 10px;
-    animation: animacao3 5s infinite, animacao1 2s ease-in-out forwards;
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
 }
 
 h2 {
-    animation: animacao3 5s infinite, animacao1 2s ease-in-out forwards;
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
     font-size: 16px;
 }
 
@@ -64,7 +64,7 @@ h2 {
     width: 33px;
     border-radius: 8px;
     border: 2px solid rgb(49, 49, 49);
-    animation: animacao3 5s infinite, animacao1 2s ease-in-out forwards;
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
 }
 
 .links-list {
@@ -77,20 +77,20 @@ h2 {
 
 .links-list li a {
     display: block;
-    background-color: rgba(255, 255, 255, 0.158);
+    background-color: rgba(49, 49, 49, 0.664);
     padding: 15px 20px;
     border-radius: 10px;
     text-decoration: none;
-    color:rgba(0, 0, 0, 0.699);
-    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.342);
+    color:rgba(252, 252, 252, 0.87);
+    box-shadow: 0 0 0 0px rgba(78, 78, 78, 0.651);
     font-weight: bold;
     border: 2px solid rgb(0, 0, 0);
-    animation: animacao3 5s infinite, animacao1 2s ease-in-out forwards;
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
 }
 
 .links-list li a span {
     font-size: 17px;
-    color: rgba(0, 0, 0, 0.699);
+    color: rgba(255, 255, 255, 0.705);
     display: block;
     margin-top: 10px;
 }
@@ -105,14 +105,14 @@ h2 {
 }
 
 @keyframes animacao2 {
-    50% { border-color: rgb(129, 129, 129); }
-    100% { border-color: rgb(85, 85, 85); }
+    50% { border-color: rgb(206, 206, 206); }
+    100% { border-color: rgb(151, 151, 151); }
   }
 
 @keyframes animacao3 {
-    0% { border-color: rgb(192, 192, 192); }
-    25% { border-color: rgb(155, 155, 155); }
-    50% { border-color: rgb(158, 158, 158); }
-    75% { border-color: rgb(75, 75, 75); }
-    100% { border-color: rgb(34, 34, 34); }
+    0% { border-color: rgb(212, 212, 212); }
+    25% { border-color: rgb(177, 177, 177); }
+    50% { border-color: rgb(87, 87, 87); }
+    75% { border-color:  rgb(65, 65, 65,); }
+    100% { border-color: rgb(0, 0, 0); }
   }
