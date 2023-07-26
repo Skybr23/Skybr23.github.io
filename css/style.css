@@ -10,7 +10,7 @@ html, body {
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: rgba(255, 255, 255, 0.705);
+    color: rgba(204, 204, 204, 0.705);
 }
 
 .borda {
@@ -36,6 +36,12 @@ h2 {
     animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
     font-size: 16px;
 }
+h3 {
+    margin: 50px;
+    margin-top: 10px;
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
+    font-size: 16px;
+}
 
 .profile {
     text-align: center;
@@ -43,7 +49,7 @@ h2 {
 }
 
 .gif {
-    background-image: url(../img/blackhole.gif);
+    background-image: url(../img/rain.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
