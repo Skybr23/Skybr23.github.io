@@ -1,4 +1,5 @@
 * {
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,13 +10,12 @@ html, body {
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
     color: rgba(255, 255, 255, 0.842);
 }
 
 .borda {
     margin-top: 20px;
-    width: 150px;
+    width: 170px;
     border-radius: 120px;
     border: 5px rgba(136, 136, 136, 0.705);
     box-shadow: 0 0 20px rgba(206, 206, 206, 0.712);
@@ -24,19 +24,19 @@ body {
  }
 
 h1 {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 100;
     margin: 10px;
     font-size: 24px;
     animation: animacao1 2s ease-in-out forwards;
 }
 
 h2 {
+    font-weight: 100;
     animation: animacao1 2s ease-in-out forwards;
     font-size: 20px;
     margin: 10px;
 }
 h3 {
+    font-weight: 100;
     margin: 10px;
     animation: animacao1 2s ease-in-out forwards;
     font-size: 16px;
