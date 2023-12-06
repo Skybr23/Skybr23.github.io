@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(255, 255, 255)
+}
+
+.borda {
+    margin-top: 20px;
+    width: 150px;
+    border-radius: 120px;
+    border: 5px rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    animation: animacao2 2s infinite, animacao1 2s ease-in-out forwards;
+ }
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
+}
+
+h2 {
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
+    font-size: 16px;
+}
+h3 {
+    margin: 0 30px;
+    margin-top: 10px;
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
+    font-size: 16px;
+}
+
+.profile {
+    text-align: center;
+    margin-top:  0 20px;
+}
+
+.gif {
+    background-image: url(../img/14fd.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.social {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 30px;
+}
+
+.social img {
+    width: 33px;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0);
+    animation: animacao2 2s infinite, animacao1 2s ease-in-out forwards;
+}
+
+.links-list {
+    list-style: none;
+}
+
+.links-list li {
+    margin: 10px 20px;
+}
+
+.links-list li a {
+    display: block;
+    background-color: rgba(49, 49, 49, 0);
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.87);
+    box-shadow: 0 0 0 0px rgba(107, 107, 107, 0.11);
+    font-weight: bold;
+    border: 2px solid rgb(0, 0, 0);
+    animation: animacao3 3s infinite, animacao1 2s ease-in-out forwards;
+}
+
+.links-list li a span {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.705);
+    display: block;
+    margin-top: 10px;
+}
+
+@keyframes animacao1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes animacao2 {
+    50% { border-color: rgb(255, 255, 255); }
+    100% { border-color: rgb(92, 92, 92); }
+  }
+
+@keyframes animacao3 {
+    0% { border-color: red; }
+    16.6% { border-color: orange; }
+    33.3% { border-color: yellow; }
+    50% { border-color: green; }
+    66.6% { border-color: blue; }
+    83.3% { border-color: indigo; }
+    100% { border-color: violet; }
+  }
