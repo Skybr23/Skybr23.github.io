@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noite Romântica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/U0wrs5m.png') repeat;
+            animation: twinkle 5s infinite alternate;
+        }
+        .falling-stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.9;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh) translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+        .moon {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 40% 40%, #ffffff 30%, #cccccc 60%, #888888 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 30px #ffffff;
+            animation: moveMoon 6s infinite alternate ease-in-out;
+        }
+        @keyframes moveMoon {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(20px); }
+        }
+        .text {
+            font-size: 2em;
+            max-width: 80%;
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="falling-stars" id="fallingStars"></div>
+    <div class="moon"></div>
+    <p class="text" id="romanticText"></p>
+    <script>
+        const text = "Sob a luz da lua e o brilho das estrelas, meu coração bate em sintonia com o seu. Nosso amor é como o céu noturno: profundo, infinito e cheio de mistérios encantadores.";
+        const textElement = document.getElementById("romanticText");
+        let i = 0;
+
+        function typeText() {
+            if (i < text.length) {
+                textElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeText, 100);
+            }
+        }
+        
+        window.onload = function() {
+            typeText();
+            createFallingStars();
+        };
+
+        function createFallingStars() {
+            const fallingStarsContainer = document.getElementById("fallingStars");
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement("div");
+                star.classList.add("star");
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.animationDuration = (Math.random() * 3 + 1.5) + "s";
+                star.style.animationDelay = Math.random() * 5 + "s";
+                fallingStarsContainer.appendChild(star);
+            }
+        }
+    </script>
+</body>
+</html>
