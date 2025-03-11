@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma mensagem especial de Dia dos Namorados para você">
+    <meta name="theme-color" content="#ff3366">
+    <title>Uma Mensagem para Você ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .start-button {
+            padding: clamp(15px, 4vw, 20px) clamp(30px, 6vw, 40px);
+            font-size: clamp(18px, 4vw, 24px);
+            background: #A020F0;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+            position: relative;
+            z-index: 100;
+            white-space: nowrap;
+        }
+
+        .start-button:hover,
+        .start-button:focus {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.8);
+            outline: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .message {
+            position: absolute;
+            color: white;
+            font-size: clamp(1.5em, 5vw, 2em);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s;
+            text-shadow: 0 0 10px rgba(255, 51, 102, 0.8);
+            padding: 0 20px;
+            width: 100%;
+            max-width: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: explode 1s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(clamp(20, 5vw, 30));
+                opacity: 0;
+            }
+        }
+
+        .final-message {
+            position: absolute;
+            background: rgba(#A020F0);
+            padding: clamp(20px, 5vw, 30px);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 1s;
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.5);
+            margin: 0 auto;
+        }
+
+        .final-message h1 {
+            color: #ff3366;
+            margin-bottom: 20px;
+            font-size: clamp(1.5em, 5vw, 2em);
+        }
+
+        .final-message p {
+            color: white;
+            font-size: clamp(1em, 3vw, 1.2em);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .light-beam {
+            position: absolute;
+            width: 4px;
+            height: 0;
+            background: rgba(255, 255, 255, 0.6);
+            transform-origin: top;
+            animation: beam 2s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes beam {
+            0% {
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                height: 100vh;
+                opacity: 0;
+            }
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: clamp(30px, 8vw, 40px);
+            opacity: 0;
+            animation: float 4s forwards;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .message {
+                font-size: 1.2em;
+            }
+            
+            .final-message {
+                width: 95%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="start-button" onclick="startSurprise()">Clique para uma mensagem especial ✨</button>
+
+    <div id="finalMessage" class="final-message hidden">
+        <h1>✨ Carol você é especial pra mim ❤️</h1>
+        <p>
+            Neste dia 11 de março de 2025, quero te lembrar que o amor vem de muitas formas. 
+            Seu valor não é medido pelas mensagens que você recebe, mas pela luz que você carrega dentro de si.
+        </p>
+        <p>
+            Você merece todo o amor do mundo, começando pelo amor próprio! 🌟
+        </p>
+        <p>
+            Eu vou roubar você pra mim 💝
+        </p>
+    </div>
+
+    <script>
+        const mensagens = [
+            "Ei você, sim, você...",
+            "Talvez você não tenha recebido uma mensagem hoje...",
+            "Mas aqui vai algo especial...",
+            "Porque você merece ser celebrada...",
+            "E lembrar o quão valiosa você é..."
+        ];
+
+        const emojis = ["❤️", "💖", "💝", "💕", "💗", "💓", "💞", "💘", "💌", "✨", "🌟", "⭐"];
+
+        function criarMensagem(texto, atraso) {
+            setTimeout(() => {
+                const msg = document.createElement('div');
+                msg.className = 'message';
+                msg.textContent = texto;
+                msg.style.top = `${Math.random() * 60 + 20}%`;
+                document.body.appendChild(msg);
+                requestAnimationFrame(() => msg.style.opacity = 1);
+                setTimeout(() => {
+                    msg.style.opacity = 0;
+                    setTimeout(() => msg.remove(), 1000);
+                }, 2000);
+            }, atraso);
+        }
+
+        function criarFogoDeArtifício(x, y) {
+            const cores = ['#ff0', '#f0f', '#0ff', '#ff4', '#4ff'];
+            const quantidadeParticulas = window.innerWidth < 480 ? 15 : 30;
+            
+            for (let i = 0; i < quantidadeParticulas; i++) {
+                const fogoDeArtificio = document.createElement('div');
+                fogoDeArtificio.className = 'firework';
+                fogoDeArtificio.style.left = x + 'px';
+                fogoDeArtificio.style.top = y + 'px';
+                fogoDeArtificio.style.backgroundColor = cores[Math.floor(Math.random() * cores.length)];
+                fogoDeArtificio.style.transform = `rotate(${Math.random() * 360}deg)`;
+                document.body.appendChild(fogoDeArtificio);
+                setTimeout(() => fogoDeArtificio.remove(), 1000);
+            }
+        }
+
+        function criarFeixeDeLuz() {
+            const feixe = document.createElement('div');
+            feixe.className = 'light-beam';
+            feixe.style.left = `${Math.random() * 100}%`;
+            document.body.appendChild(feixe);
+            setTimeout(() => feixe.remove(), 2000);
+        }
+
+        function criarEmojiFlutuante() {
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = `${Math.random() * 100}%`;
+            document.body.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 4000);
+        }
+
+        function startSurprise() {
+            document.querySelector('.start-button').style.display = 'none';
+            document.body.style.background = 'linear-gradient(45deg, #000000, #1a0010)';
+
+            let atraso = 0;
+            mensagens.forEach((texto) => {
+                criarMensagem(texto, atraso);
+                atraso += 2000;
+            });
+
+            const isMobile = window.innerWidth < 480;
+            const intervaloEfeitos = isMobile ? 800 : 500;
+            
+            const intervaloFeixe = setInterval(criarFeixeDeLuz, intervaloEfeitos);
+            const intervaloEmoji = setInterval(criarEmojiFlutuante, intervaloEfeitos);
+            const intervaloFogoDeArtificio = setInterval(() => {
+                criarFogoDeArtificio(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight
+                );
+            }, intervaloEfeitos + 100);
+
+            setTimeout(() => {
+                clearInterval(intervaloFeixe);
+                clearInterval(intervaloEmoji);
+                clearInterval(intervaloFogoDeArtificio);
+                
+                const finalMessage = document.getElementById('finalMessage');
+                finalMessage.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    finalMessage.style.opacity = 1;
+                    finalMessage.style.transform = 'scale(1)';
+                });
+
+                setInterval(() => {
+                    criarFogoDeArtificio(
+                        Math.random() * window.innerWidth,
+                        Math.random() * window.innerHeight
+                    );
+                    criarEmojiFlutuante();
+                }, isMobile ? 1500 : 1000);
+            }, atraso + 2000);
+        }
+    </script>
+</body>
+</html>
