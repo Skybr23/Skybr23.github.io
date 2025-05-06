@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Um bom dia</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: rgba(236, 203, 223, 0.925);
+    }
+
+    .texto-container {
+      position: relative;
+      z-index: 1;
+      max-width: 80%;
+      margin: 100px auto;
+      background: rgba(199, 169, 191, 0.74);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.082);
+    }
+
+    .petala {
+      position: absolute;
+      top: -50px;
+      width: 32px;
+      height: 32px;
+      background-image: url('https://cdn.pixabay.com/photo/2022/08/30/07/46/sakura-7420568_1280.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.9;
+      pointer-events: none;
+      animation: cair 10s linear infinite;
+    }
+
+    @keyframes cair {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="texto-container" id="texto"></div>
+
+  <script>
+    const texto = "Olá, sou eu Gustavo, dediquei alguns minutos do meu tempo para dizer, tenham um bom dia de trabalho e desejo tudo que a de melhor para vocês Brenda, Priscila, Maria e Ivone!";
+    const elemento = document.getElementById("texto");
+    let index = 0;
+
+    function escrever() {
+      if (index < texto.length) {
+        elemento.innerHTML += texto.charAt(index);
+        index++;
+        setTimeout(escrever, 120);
+      }
+    }
+
+    escrever();
+
+    function criarPetala() {
+      const petala = document.createElement('div');
+      petala.classList.add('petala');
+      petala.style.left = Math.random() * 100 + "vw";
+      petala.style.animationDuration = (8 + Math.random() * 5) + "s";
+      petala.style.opacity = (0.5 + Math.random() * 0.5).toFixed(2);
+      document.body.appendChild(petala);
+
+      setTimeout(() => {
+        petala.remove();
+      }, 13000);
+    }
+
+    setInterval(criarPetala, 350);
+  </script>
+</body>
+</html>
