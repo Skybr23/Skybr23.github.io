@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Um Bom Dia</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fdeff9, #eec6c6, #c56a6a);
+      background-size: 400% 400%;
+      animation: bgAnim 15s ease infinite;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    @keyframes bgAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .texto-container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(15px);
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      z-index: 2;
+      display: none;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .texto-container h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #753737;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      animation: slideInDown 1.2s ease both;
+    }
+
+    .texto-container p {
+      font-size: 1.3rem;
+      color: #843c3c;
+      line-height: 1.7;
+      animation: fadeInText 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideInDown {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInText {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .petala {
+      position: absolute;
+      top: -60px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://media.stickerswiki.app/stickersworldflower/2363980.512.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.9;
+      pointer-events: none;
+      animation: cair 10s linear infinite, flutuar 6s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes cair {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes flutuar {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(30px); }
+    }
+
+    #botao-musica {
+      padding: 16px 30px;
+      font-size: 1.2rem;
+      background: linear-gradient(45deg, #a83268, #cf5c78);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 3;
+      animation: fadeIn 1.5s ease;
+    }
+
+    #botao-musica:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <button id="botao-musica">Ver Mensagem</button>
+
+  <div class="texto-container" id="mensagem">
+    <h1>Um agradecimento!</h1>
+    <p id="texto"></p>
+  </div>
+
+  <script>
+    const botao = document.getElementById("botao-musica");
+    const mensagem = document.getElementById("mensagem");
+    const texto = "Olha eu aqui de novo =D Obrigado Brenda, Priscila e Ivone por terem lembrado de mim, eu nem falo por causa do pagamento kkk nem me importo com isso, mas fico feliz por terem lembrado de mim! Tomem um mimo para deixar o dia de vocês um pouco melhor. ❤️";
+    const elemento = document.getElementById("texto");
+    let index = 0;
+
+    function escrever() {
+      if (index < texto.length) {
+        elemento.innerHTML += texto.charAt(index);
+        index++;
+        setTimeout(escrever, 50);
+      }
+    }
+
+    function criarPetala() {
+      const petala = document.createElement('div');
+      petala.classList.add('petala');
+      petala.style.left = Math.random() * 100 + "vw";
+      petala.style.animationDuration = (8 + Math.random() * 5) + "s";
+      petala.style.opacity = (0.5 + Math.random() * 0.5).toFixed(2);
+      document.body.appendChild(petala);
+      setTimeout(() => petala.remove(), 13000);
+    }
+
+    botao.addEventListener("click", () => {
+      botao.style.display = "none";
+      mensagem.style.display = "block";
+      escrever();
+      setInterval(criarPetala, 300);
+    });
+  </script>
+</body>
+</html>
